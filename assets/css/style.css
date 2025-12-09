@@ -417,6 +417,7 @@ body > main {
   cursor: pointer;
   transition: background-color var(--transition-fast);
   text-align: left;
+  gap: var(--spacing-sm);
 }
 
 .info-accordion-header:hover {
@@ -429,6 +430,10 @@ body > main {
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  flex: 1;
 }
 
 .info-accordion-icon {
@@ -437,6 +442,13 @@ body > main {
   color: var(--text-secondary);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  min-width: 1.25rem;
 }
 
 .info-accordion.active .info-accordion-icon {
@@ -546,6 +558,7 @@ body > main {
   cursor: pointer;
   transition: background-color var(--transition-fast);
   text-align: left;
+  gap: var(--spacing-sm);
 }
 
 .options-accordion-header:hover {
@@ -558,6 +571,10 @@ body > main {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  flex: 1;
 }
 
 .options-accordion-icon {
@@ -566,6 +583,13 @@ body > main {
   color: var(--text-secondary);
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  min-width: 1.25rem;
 }
 
 .options-accordion.active .options-accordion-icon {
@@ -766,6 +790,24 @@ body > main {
   font-size: var(--font-size-sm);
   transition: border-color var(--transition-fast);
   outline: none;
+}
+
+.url-input[type="select"],
+.url-input select,
+select.url-input {
+  padding-right: 2.5rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-sm) center;
+  background-size: 0.75rem;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .url-input[type="select"],
+[data-theme="dark"] .url-input select,
+[data-theme="dark"] select.url-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23aaa' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
 }
 
 .secret-input:focus,
@@ -974,6 +1016,7 @@ body > main {
 
 .format-select {
   padding: var(--spacing-xs) var(--spacing-sm);
+  padding-right: 2rem;
   background: var(--bg-input);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-sm);
@@ -983,6 +1026,15 @@ body > main {
   cursor: pointer;
   transition: border-color var(--transition-fast);
   outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-xs) center;
+  background-size: 0.75rem;
+}
+
+[data-theme="dark"] .format-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23aaa' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
 }
 
 .format-select:focus {
