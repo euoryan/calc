@@ -246,7 +246,10 @@ function insertAtCursor(text) {
   
   input.value = value.substring(0, start) + text + value.substring(end);
   input.setSelectionRange(start + text.length, start + text.length);
-  input.focus();
+  // Manter foco apenas se já estava focado (para não abrir teclado no mobile)
+  if (input === document.activeElement) {
+    input.focus();
+  }
   updateResult();
 }
 
@@ -261,7 +264,8 @@ function inputNumber(number) {
     } else {
       input.value += number;
     }
-    input.focus();
+    // Não focar o input para evitar abrir teclado no mobile
+    // input.focus();
     updateResult();
   }
 }
@@ -278,7 +282,8 @@ function inputDecimal() {
     } else if (!lastNumber) {
       input.value += '0.';
     }
-    input.focus();
+    // Não focar o input para evitar abrir teclado no mobile
+    // input.focus();
     updateResult();
   }
 }
@@ -298,7 +303,8 @@ function handleOperator(operator) {
     }
     
     input.value = value + operatorText;
-    input.focus();
+    // Não focar o input para evitar abrir teclado no mobile
+    // input.focus();
     updateResult();
   }
 }
@@ -332,7 +338,8 @@ function performCalculation() {
 
 function clear() {
   elements.calcFormula.value = '0';
-  elements.calcFormula.focus();
+  // Não focar o input para evitar abrir teclado no mobile
+  // elements.calcFormula.focus();
   updateResult();
 }
 
@@ -352,7 +359,8 @@ function clearEntry() {
   } else {
     input.value = '0';
   }
-  input.focus();
+  // Não focar o input para evitar abrir teclado no mobile
+  // input.focus();
   updateResult();
 }
 
@@ -376,7 +384,8 @@ function backspace() {
   } else {
     input.value = '0';
   }
-  input.focus();
+  // Não focar o input para evitar abrir teclado no mobile
+  // input.focus();
   updateResult();
 }
 
@@ -384,7 +393,8 @@ function loadFromHistory(expression, result) {
   if (state.privacyMode) return;
   
   elements.calcFormula.value = expression;
-  elements.calcFormula.focus();
+  // Não focar o input para evitar abrir teclado no mobile
+  // elements.calcFormula.focus();
   updateResult();
 }
 
